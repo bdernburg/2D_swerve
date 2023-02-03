@@ -1,0 +1,30 @@
+{
+  "configurations": [
+    {
+      "name": "PROS Project",
+      "includePath": [
+        "${workspaceFolder}/**",
+        "/home/bdernburg/Documents/Code/Robotics_Class/2d Swerve/2d_swerve/include"
+      ],
+      "defines": [
+        "_DEBUG",
+        "UNICODE",
+        "_UNICODE"
+      ],
+      "compilerPath": "/home/bdernburg/.config/Code/User/globalStorage/sigbots.pros/install/pros-toolchain-linux/bin/arm-none-eabi-g++",
+      "cStandard": "c17",
+      "cppStandard": "c++17",
+      "intelliSenseMode": "gcc-arm",
+      "compileCommands": "/home/bdernburg/Documents/Code/Robotics_Class/2d Swerve/2d_swerve/compile_commands.json",
+      "browse": {
+        "path": [
+          "/home/bdernburg/Documents/Code/Robotics_Class/2d Swerve/2d_swerve"
+        ],
+        "limitSymbolsToIncludedHeaders": true,
+        "databaseFilename": ""
+      },
+      "configurationProvider": "ms-vscode.makefile-tools"
+    }
+  ],
+  "version": 4
+}
