@@ -22,24 +22,22 @@ float turnkp = 10;
 
 void follow2D(int distance0, int distance1){
 	int avg_Dist = (distance0 + distance1)/2;
-	if (abs(distance0-distance1)) {
-		motorSet(6, kp*(45+(imeGet(IME_MOTOR_1, &counts)*27/79)));
-		motorSet(7, kp*(-45+(imeGet(IME_MOTOR_2, &counts)*27/79)));
-		motorSet(8, kp*(-45+(imeGet(IME_MOTOR_3, &counts)*27/79)));
-		motorSet(9, kp*(45+(imeGet(IME_MOTOR_4, &counts)*27/79)));
-
-		speed = turnkp * (distance0-distance1);
-		motorSet(2, speed);
-		motorSet(3, speed);
-		motorSet(4, speed);
-		motorSet(5, speed);
-	}
 	if (avg_Dist < (target_dist - 3) || (avg_Dist > (target_dist + 3))) {
 		speed =  (abs(avg_Dist - target_dist)) * kp;
-		motorSet(2, speed);
-		motorSet(3, speed);
-		motorSet(4, speed);
-		motorSet(5, speed);
+		if (distance0 > distance1) {
+			int speedChange = (distance0-distance1) * 5;
+			motorSet(2, speed+speedChange);
+			motorSet(3, speed+speedChange);
+			motorSet(4, speed);
+			motorSet(5, speed);
+		}
+		if (distance0 > distance1) {
+			int speedChange = (distance0-distance1) * 5;
+			motorSet(2, speed);
+			motorSet(3, speed);
+			motorSet(4, speed+speedChange);
+			motorSet(5, speed+speedChange);
+		}
 	}
 	else {
 		motorStopAll();
